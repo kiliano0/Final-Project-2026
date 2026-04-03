@@ -15,6 +15,10 @@ How to run Energy Model. Examples used for calibration. First CSV is RoboDK file
 How to run Batch Energy Model. input-dir is where all the files are taken from.
 C:/Users/kytho/Documents/Energy_Model/venv/Scripts/python.exe EnergyModel_Batch.py --input-dir "C:/Users/kytho/Desktop/RoboDK_Exports" --output-csv Energy_summary.csv --time-col Time_Total --power-mode total_energy_j --plot-power-dir "C:/Users/kytho/Documents/Energy_Model/power_plots_RoboDK"
 
+How to extract the 100 Seperate moves from the Power Analyser Data (This was done for all ten sets of data)
+cd "C:\Users\kytho\Documents\Energy_Model"
+python .\extract_move_energy_grid.py --input ".\AllSpeedsAllAccelsRealRobot\PowerAllFour2.csv" --output ".\move_energy_grid2.csv" --plot-output ".\plots2\detected_regions.png" ` --plot-detail-dir ".\plots2\detail_pages"
+
 RoboDK Scripts
 Before running any of these ensure that the robot is in the starting position for the program.
 GetJointData.py (Output CSV file for a single program)
@@ -27,3 +31,5 @@ FullOutputCSVLinearMove.py (Outputs cycle times for a program over a range of li
 Under Results:
 Speed Data.csv (contains the real speeds mapped to the commanded speeds)
 AccelCurveData.csv (contains the Energy Model and Power Analyser Results. Final and organised values are found under Power Calculations tab)
+
+
